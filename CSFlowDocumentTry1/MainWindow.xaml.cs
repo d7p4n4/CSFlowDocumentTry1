@@ -26,6 +26,19 @@ namespace CSFlowDocumentTry1
         public MainWindow()
         {
             InitializeComponent();
+
+           // uiListViewFlowDocument.Items.Add(uiListViewItem);
+           // uiListViewFlowDocument.Items.Add(uiListViewItem);
+        }
+
+        private void AddTextBox(object subject, RoutedEventArgs e)
+        {
+            BlockUIContainer uiContainer = new BlockUIContainer()
+            {
+                Child = new TextBox() { Width = 200 }
+            };
+
+            uiFlowDocument.Blocks.Add(uiContainer);
         }
 
         private void ButtonAction(object subject, RoutedEventArgs e)
