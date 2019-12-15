@@ -5,21 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSFlowDocumentTry1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="500">
+        Title="MainWindow" Height="800" Width="500">
     <Grid>
-        <FlowDocumentReader Height="325" VerticalAlignment="Top">
+        <FlowDocumentReader Height="500" VerticalAlignment="Top">
             <FlowDocument ColumnWidth="400">
                 <Section Background="GhostWhite">
                     <Paragraph TextAlignment="Center">
-                        Űrlap a FlowDocument-en belül.
+                        Ac4yClass objektum
                     </Paragraph>
                     <BlockUIContainer>
                         <WrapPanel Orientation="Vertical" Width="450">
                             <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" Width="450">
-                                <Label Content="Név: "/>
-                                <TextBox x:Name="uiTextBoxNev" Width="400"/>
-                                <Label Content="Életkor: "/>
-                                <TextBox x:Name="uiTextBoxKor" Width="400"/>
+                                <Label Content="Name: "/>
+                                <TextBox x:Name="uiTextBoxName" Width="400" Height="25"/>
+                                <Label Content="Ancestor: "/>
+                                <TextBox x:Name="uiTextBoxAncestor" Width="400" Height="25"/>
+                                <Label Content="GUID: "/>
+                                <TextBox x:Name="uiTextBoxGUID" Width="400" Height="25"/>
+                                <Label Content="Namespace: "/>
+                                <TextBox x:Name="uiTextBoxNamespace" Width="400" Height="25"/>
                                 <Button Click="ButtonAction" Width="400" HorizontalAlignment="Center" Height="25" Margin="25 12">Értékek kiírása</Button>
                             </WrapPanel>
                         </WrapPanel>
@@ -30,15 +34,21 @@
                 </Section>
             </FlowDocument>
         </FlowDocumentReader>
-        <ListView x:Name="uiListView" BorderBrush="Black" BorderThickness="2" MinWidth="400" HorizontalAlignment="Center" Height="150" Margin="0 350 0 12">
+        <ListView x:Name="uiListView" BorderBrush="Black" BorderThickness="2" MinWidth="400" HorizontalAlignment="Center" Height="150" Margin="0 525 0 12">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
                         <TextBlock Text="Name: " />
-                        <TextBlock Text="{Binding name}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
                         <TextBlock Text=", " />
-                        <TextBlock Text="Age: " />
-                        <TextBlock Text="{Binding age}" FontWeight="Bold" />
+                        <TextBlock Text="Ancestor: " />
+                        <TextBlock Text="{Binding Ancestor}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="GUID: " />
+                        <TextBlock Text="{Binding GUID}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="Namespace: " />
+                        <TextBlock Text="{Binding Namespace}" FontWeight="Bold" />
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

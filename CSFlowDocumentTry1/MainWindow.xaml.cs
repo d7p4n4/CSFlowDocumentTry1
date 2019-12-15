@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSAc4yClass.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace CSFlowDocumentTry1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Person> personList = new List<Person>();
+        public List<Ac4yClass> Ac4yClassList = new List<Ac4yClass>();
 
         public MainWindow()
         {
@@ -29,17 +30,21 @@ namespace CSFlowDocumentTry1
 
         private void ButtonAction(object subject, RoutedEventArgs e)
         {
-            Person person = new Person()
+            Ac4yClass ac4yClass = new Ac4yClass()
             {
-                name = uiTextBoxNev.Text.ToString(),
-                age = uiTextBoxKor.Text.ToString()
+                Name = uiTextBoxName.Text.ToString(),
+                Ancestor = uiTextBoxAncestor.Text.ToString(),
+                GUID = uiTextBoxGUID.Text.ToString(),
+                Namespace = uiTextBoxNamespace.Text.ToString()
             };
 
-            personList.Add(person);
-            uiListView.Items.Add(person);
+            Ac4yClassList.Add(ac4yClass);
+            uiListView.Items.Add(ac4yClass);
 
-            uiTextBoxKor.Text = "";
-            uiTextBoxNev.Text = "";
+            uiTextBoxName.Text = "";
+            uiTextBoxAncestor.Text = "";
+            uiTextBoxGUID.Text = "";
+            uiTextBoxNamespace.Text = "";
 
         }
 
