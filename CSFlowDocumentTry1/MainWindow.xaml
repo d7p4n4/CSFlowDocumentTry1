@@ -9,13 +9,13 @@
     <Grid>
         <FlowDocumentReader Height="300" Width="800" VerticalAlignment="Top">
             <FlowDocument ColumnWidth="400" x:Name="uiFlowDocument">
-                <Section Background="GhostWhite">
+                <Section Background="GhostWhite" Name="section0">
                     <Paragraph TextAlignment="Center">
                         Ac4yClass objektum
                     </Paragraph>
 
-                    <BlockUIContainer>
-                        <WrapPanel x:Name="uiOuterWrapPanel" Orientation="Vertical" Width="750" Margin="0 0" HorizontalAlignment="Center">
+                    <BlockUIContainer BorderThickness="1" BorderBrush="Black">
+                        <WrapPanel x:Name="uiOuterWrapPanel" Orientation="Vertical" Width="750" Margin="0 12" HorizontalAlignment="Center">
                             <WrapPanel Orientation="Horizontal" Margin="25 0 0 0">
                                 <Label Content="Name: " Width="100"/>
                                 <TextBox x:Name="uiTextBoxName" Width="250" Height="25"/>
@@ -28,17 +28,14 @@
                                 <Label Content="Namespace: " Width="100"/>
                                 <TextBox x:Name="uiTextBoxNamespace" Width="250" Height="25"/>
                             </WrapPanel>
-                            <Button Click="AddTextBox" Width="400" HorizontalAlignment="Center" Height="25" Margin="25 12">Értékek kiírása</Button>
                         </WrapPanel>
                     </BlockUIContainer>
-                    
-                    <Paragraph>
-                        A gombon történő kattintás után, a beírt értékek kiíródnak a flowDocumenten kívül elhelyezett listView-ba.
-                    </Paragraph>
+
                 </Section>
             </FlowDocument>
         </FlowDocumentReader>
-        <ListView x:Name="uiListView" BorderBrush="Black" BorderThickness="2" MinWidth="400" HorizontalAlignment="Center" Height="150" Margin="0 325 0 12">
+        <Button Click="AddTextBox" Width="400" HorizontalAlignment="Center" Height="25" Margin="0 125 0 0">Új Ac4yClass űrlap</Button>
+<ListView x:Name="uiListView" BorderBrush="Black" BorderThickness="2" MinWidth="400" HorizontalAlignment="Center" Height="150" Margin="0 325 0 12">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -57,5 +54,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Click="ButtonAction" Width="100" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="75">Mentés</Button>
     </Grid>
 </Window>
