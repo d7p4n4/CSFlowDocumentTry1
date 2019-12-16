@@ -161,6 +161,7 @@ namespace CSFlowDocumentTry1
 
         private void ButtonAction(object subject, RoutedEventArgs e)
         {
+            uiListView.Items.Clear();
             
             Ac4yClass ac4yClass = new Ac4yClass()
             {
@@ -246,14 +247,10 @@ namespace CSFlowDocumentTry1
                     uiFlowDocument.Blocks.Add(block);
                 }
             }
+
+            Ac4yClassDictionary.Remove(sectionName);
             
-            foreach(var dictionary in Ac4yClassDictionary)
-            {
-                if (dictionary.Key.Equals(sectionName))
-                {
-                    Ac4yClassDictionary.Remove(sectionName);
-                }
-            }
+            
         }
 
         public class Person
